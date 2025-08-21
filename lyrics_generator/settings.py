@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-     'generator',  # Add your app here
+    'lyrics_generator',
 ]
 # Create models directory
 MODELS_DIR = os.path.join(BASE_DIR, 'models')
