@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <h2>Generate Rap Lyrics</h2>
+        
+        <div class="card mt-4">
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label for="prompt" class="form-label">Starting Phrase</label>
+                        {{ form.prompt }}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="artist_style" class="form-label">Artist Style (optional)</label>
+                        {{ form.artist_style }}
+                        <div class="form-text">Select an artist to emulate their style</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="length" class="form-label">Length (characters)</label>
+                        <input type="number" class="form-control" id="length" name="length" 
+                               min="50" max="1000" value="200">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Generate Lyrics</button>
+                    <a href="{% url 'train_model' %}" class="btn btn-outline-secondary">Train Model First</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto text-center">
+        <h1 class="mb-4">Rap Lyrics Generator</h1>
+        <p class="lead">Generate rap lyrics in the style of your favorite artists using AI</p>
+        
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Add Artists</h5>
+                        <p class="card-text">Add your favorite rap artists to the database</p>
+                        <a href="{% url 'add_artist' %}" class="btn btn-primary">Add Artist</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Add Lyrics</h5>
+                        <p class="card-text">Add lyrics to train the AI model</p>
+                        <a href="{% url 'add_lyrics' %}" class="btn btn-primary">Add Lyrics</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Generate</h5>
+                        <p class="card-text">Create new rap lyrics with AI</p>
+                        <a href="{% url 'generate_lyrics' %}" class="btn btn-success">Generate Lyrics</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
