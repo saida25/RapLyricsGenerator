@@ -1,3 +1,4 @@
+# lyrics_generator/views.py
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.contrib import messages
@@ -5,10 +6,12 @@ from django.conf import settings
 import os
 import json
 
-from .models import Artist, Lyrics, GeneratedLyrics
-from .forms import ArtistForm, LyricsForm, GenerateForm
-from .utils.data_processor import DataProcessor
-from .utils.model_trainer import RapLyricsTrainer
+# Import from your app, not from lyrics_generator
+from generator.models import Artist, Lyrics, GeneratedLyrics
+from generator.forms import ArtistForm, LyricsForm, GenerateForm
+from generator.utils.data_processor import DataProcessor
+from generator.utils.model_trainer import RapLyricsTrainer
+
 
 def index(request):
     return render(request, 'index.html')
