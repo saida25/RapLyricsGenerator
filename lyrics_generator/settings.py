@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,6 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
      'generator',  # Add your app here
 ]
+# Create models directory
+MODELS_DIR = os.path.join(BASE_DIR, 'models')
+os.makedirs(MODELS_DIR, exist_ok=True)
+
+DATA_DIR = os.path.join(BASE_DIR, 'data')
+os.makedirs(DATA_DIR, exist_ok=True)
+os.makedirs(os.path.join(DATA_DIR, 'raw'), exist_ok=True)
+os.makedirs(os.path.join(DATA_DIR, 'processed'), exist_ok=True)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
